@@ -14,6 +14,8 @@ object NullChecker {
   import com.ensoftcorp.atlas.java.interpreter.lib.Common._
   import com.ensoftcorp.atlas.java.core.db.graph.Graph
   import com.ensoftcorp.atlas.java.core.db.graph.GraphElement
+  import com.ensoftcorp.atlas.ui.viewer.graph.DisplayUtil
+  import java.awt.Color
 
   /**
    * Get the dataflow edges going to the given node
@@ -22,6 +24,16 @@ object NullChecker {
     edges(Edge.DATA_FLOW).reverse(edges(Edge.DECLARES).forward(x))
   }
 
+  def showHighlightedSubgraph(x:Q) = {
+    var t = edges(Edge.DATA_FLOW).reverse(edges(Edge.DECLARES).forward(x))
+    var y = check(x)
+    
+    var h = new Highlighter()
+    h.highlightEdges(y, Color.ORANGE)
+    h.highlightNodes(y.roots(), Color.RED)
+    DisplayUtil.displayGraph(t.eval(), h)
+  }
+  
   /**
    * Check whether a null value ever flows into the given node
    * 
@@ -43,12 +55,11 @@ object NullChecker {
         
         println(toRet.eval().nodes().size(Accuracy.APPROXIMATE))
         
-        return toRet;
+	  	return toRet;
       }
     }
     
-//    t;
-    empty();
+  	return empty();
   }
   
   /**

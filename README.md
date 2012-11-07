@@ -7,7 +7,7 @@ This is a small demo of using jAtlas for simple null type checking.
 
 ## Current Limitations ##
 
-Currently, this solution recursively checks the dataflow through the app to see if the type `org.eclipse.jdt.core.dom.NullLiteral` is ever assigned to a variable that flows to the node passed in.  As far as I know, this will not detect the case where an instance variable is not initialized to anything and then gets assigned to the variable being checked.
+* Currently, this solution recursively checks the dataflow through the app to see if the type `org.eclipse.jdt.core.dom.NullLiteral` is ever assigned to a variable that flows to the node passed in.  As far as I know, this will not detect the case where an instance variable is not initialized to anything and then gets assigned to the variable being checked.
 
 	public class Test {
 		String notInitialized;
@@ -23,6 +23,8 @@ Currently, this solution recursively checks the dataflow through the app to see 
 	}
 
 So in this example, the flow from method `test()` to `performTest(@NonNull String a)` would not be caught. This is because the type jAtlas sees for `notInitialized` is not `org.eclipse.jdt.core.dom.NullLiteral`, but is something else.
+
+* Another limitation it currently has is that once it finds a flow from `null` to the sink node, it stops looking. Therefore, it will only display at most one offense.
 
 ## Running this Solution ##
 
