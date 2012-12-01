@@ -11,11 +11,11 @@ This is a small demo of using jAtlas for simple null type checking.
 
 		public class Test {
 			String notInitialized;
-			
+
 			public void performTest(@NonNull String a) {
 				// Do something that assumes parameter is NonNull
 			}
-			
+
 			public void test() {
 				// Pass in the unitialized instance variable into performTest
 				performTest(notInitialized);
@@ -37,6 +37,7 @@ Prereqs: This tutorial assumes that you already have Eclipse set up with the jAt
 	* `NonNull.java` just defines the `@NonNull` annotation. It doesn't currently do anything, but just provides an indication of what types we are wanting to be NonNull
 3. Add the `NullChecker.scala` file to the `toolbox.script` package in the `edu.iastate.apac.toolbox` project.
 	* What I did was just dragged it into the package in Eclipse, and when Eclipse prompted asking if I wanted to copy the file or link the file, I chose link. This way the file stays in the repository folder, and also is in the right place in the Eclipse project.
+	    * Recently this option hasn't been working for me, so I just create a hard-link on my filesystem from the `NullChecker.scala` file in this repository to the `src/toolbox/script` directory in the `edu.iastate.apac.toolbox` folder
 4. Reindex the workspace (I just had the `edu.iastate.apac.toolbox` project and `Nullable` project open)
 5. Restart the `J-Atlas Interpreter`
 6. Run `show(NullChecker.check(methods("c")))` in the J-Atlas Interpreter
