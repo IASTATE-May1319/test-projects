@@ -16,31 +16,41 @@ object NullChecker {
   import com.ensoftcorp.atlas.java.core.db.graph.GraphElement
   import com.ensoftcorp.atlas.ui.viewer.graph.DisplayUtil
   import java.awt.Color
+  import scala.collection.mutable.ListBuffer
 
   /**
    * Get the dataflow edges going to the given node
    */
-  def flow(x:Q) = {
-    edges(Edge.DATA_FLOW).reverse(edges(Edge.DECLARES).forward(x))
+  def flow(sink:Q) = {
+    edges(Edge.DATA_FLOW).reverse(edges(Edge.DECLARES).forward(sink))
   }
 
-  def showHighlightedSubgraph(x:Q) = {
-    var t = edges(Edge.DATA_FLOW).reverse(edges(Edge.DECLARES).forward(x))
-    var y = check(x)
+  def showHighlightedSubgraph(sink:Q) = {
+    var t = edges(Edge.DATA_FLOW).reverse(edges(Edge.DECLARES).forward(sink))
+    var y = check(sink)
     
     var h = new Highlighter()
-    h.highlightEdges(y, Color.ORANGE)
-    h.highlightNodes(y.roots(), Color.RED)
+    var iter = y.iterator
+    while (iter.hasNext) {
+      var next = iter.next()
+      var sourceQ = toQ(toGraph(next))
+      var destQ = t.leaves()
+      var subgraph = t.between(sourceQ, destQ)
+      h.highlightEdges(subgraph, Color.ORANGE)
+      h.highlightNodes(subgraph.roots(), Color.RED)
+    }
+
     DisplayUtil.displayGraph(t.eval(), h)
   }
   
   /**
    * Check whether a null value ever flows into the given node
    * 
-   * @returns the flow from a null value to the given node (empty if no flow)
+   * @returns a list of the offending node assignments
    */
-  def check(x:Q):Q = {
-    var t = edges(Edge.DATA_FLOW).reverse(edges(Edge.DECLARES).forward(x))
+  def check(sink:Q) = {
+    var t = edges(Edge.DATA_FLOW).reverse(edges(Edge.DECLARES).forward(sink))
+    val list = new ListBuffer[GraphElement]()
     var graph = t.eval()
     
     var nodes = graph.nodes()
@@ -49,17 +59,12 @@ object NullChecker {
       var result = recursiveCheck(graph, iter.next(), "")
       if (result != null) {
         println(result.attr())
-        var sourceQ = toQ(toGraph(result))
-        var destQ = t.leaves()
-        var toRet = t.between(sourceQ, destQ);
         
-        println(toRet.eval().nodes().size(Accuracy.APPROXIMATE))
-        
-	  	return toRet;
+	  	list += result
       }
     }
     
-  	return empty();
+  	list;
   }
   
   /**

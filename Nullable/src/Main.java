@@ -25,9 +25,9 @@ public class Main {
 //		m.c("test");
 //		m.c(m.b());
 		
-//		String temp = m.b();
+		String fromB = m.b();
 //		temp = m.testField;
-//		m.c(temp);
+		m.c(fromB);
 		
 		m.c((String) o);
 	}
