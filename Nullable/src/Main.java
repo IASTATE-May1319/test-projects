@@ -1,10 +1,11 @@
 
 public class Main {
 
-	String testField = null;
+	@Nullable String testField = null;
+	@NonNull String testField2 = null;
 	
 	public void a() {
-		String str = "str";
+		@Nullable String str = "str";
 		c(str);
 	}
 	
@@ -15,9 +16,11 @@ public class Main {
 	
 	public void c(@NonNull String data) {
 		// Some random code that assumes data is not null
+
+		testField2 = testField;
 	}
 	
-	public static void main(String[] args) {
+	public static void main(@NonNull String[] args) {
 		Main m = new Main();
 		String temp = m.testField;
 		Object o = temp;
