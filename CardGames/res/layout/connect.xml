@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/wooden_top"
+    android:keepScreenOn="true"
+    android:orientation="horizontal" >
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:baselineAligned="false"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_margin="10dip"
+            android:layout_weight=".33"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/connectDeviceP3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:src="@drawable/off_device" />
+
+                <ProgressBar
+                    android:id="@+id/connectDeviceP3ProgressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="invisible" />
+
+                <com.worthwhilegames.cardgames.shared.TextView
+                    android:id="@+id/connectDeviceP3TextView"
+                    style="@style/ConnectPlayerFont"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/player_3"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_margin="10dip"
+            android:layout_weight=".33"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight=".33" >
+
+                <ImageView
+                    android:id="@+id/connectDeviceP4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:src="@drawable/off_device" />
+
+                <ProgressBar
+                    android:id="@+id/connectDeviceP4ProgressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="invisible" />
+
+                <com.worthwhilegames.cardgames.shared.TextView
+                    android:id="@+id/connectDeviceP4TextView"
+                    style="@style/ConnectPlayerFont"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/player_4"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight=".33" >
+
+                <ImageView
+                    android:id="@+id/connectDeviceTablet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:src="@drawable/on_device" />
+
+                <com.worthwhilegames.cardgames.shared.TextView
+                    style="@style/ConnectPlayerFont"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/connecting" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight=".33" >
+
+                <ImageView
+                    android:id="@+id/connectDeviceP2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:src="@drawable/off_device" />
+
+                <ProgressBar
+                    android:id="@+id/connectDeviceP2ProgressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="invisible" />
+
+                <com.worthwhilegames.cardgames.shared.TextView
+                    android:id="@+id/connectDeviceP2TextView"
+                    style="@style/ConnectPlayerFont"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/player_2"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_margin="10dip"
+            android:layout_weight=".33"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/connectDeviceP1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:src="@drawable/off_device" />
+
+                <ProgressBar
+                    android:id="@+id/connectDeviceP1ProgressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="invisible" />
+
+                <com.worthwhilegames.cardgames.shared.TextView
+                    android:id="@+id/connectDeviceP1TextView"
+                    style="@style/ConnectPlayerFont"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/player_1"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1.0" >
+
+        <com.worthwhilegames.cardgames.shared.TextView
+            android:id="@+id/myName"
+            style="@style/GameButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dip"
+            android:layout_weight=".33"
+            android:maxLines="3"
+            android:padding="15dip"
+            android:scrollHorizontally="true"
+            android:text="@string/deviceName" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".34" />
+
+        <com.worthwhilegames.cardgames.shared.Button
+            android:id="@+id/startButton"
+            style="@style/GameButtonBlack"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dip"
+            android:layout_weight=".33"
+            android:background="@drawable/statebutton"
+            android:padding="15dip"
+            android:text="@string/start"
+            android:textColor="@color/buttontextcolor" />
+    </LinearLayout>
+
+</RelativeLayout>

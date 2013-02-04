@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- A %s represents the player's name -->
+    <string-array name="phrases">
+        <item>Hey %s, play a card</item>
+        <item>Hey %s, it is your turn</item>
+        <item>%s go!</item>
+        <item>%s please play</item>
+        <item>%s your turn</item>
+    </string-array>
+
+    <array name="drawCard">
+        <item>@raw/draw_card_1</item>
+        <item>@raw/draw_card_2</item>
+        <item>@raw/draw_card_3</item>
+        <item>@raw/draw_card_4</item>
+        <item>@raw/draw_card_5</item>
+        <item>@raw/draw_card_6</item>
+        <item>@raw/draw_card_7</item>
+        <item>@raw/draw_card_8</item>
+        <item>@raw/draw_card_9</item>
+        <item>@raw/draw_card_10</item>
+        <item>@raw/draw_card_11</item>
+    </array>
+    <array name="playCard">
+        <item>@raw/play_card_1</item>
+        <item>@raw/play_card_2</item>
+        <item>@raw/play_card_3</item>
+        <item>@raw/play_card_4</item>
+        <item>@raw/play_card_5</item>
+        <item>@raw/play_card_6</item>
+        <item>@raw/play_card_7</item>
+        <item>@raw/play_card_8</item>
+        <item>@raw/play_card_9</item>
+        <item>@raw/play_card_10</item>
+        <item>@raw/play_card_11</item>
+    </array>
+    <array name="shuffle">
+        <item>@raw/shuffling_cards_1</item>
+        <item>@raw/shuffling_cards_2</item>
+        <item>@raw/shuffling_cards_3</item>
+    </array>
+
+</resources>

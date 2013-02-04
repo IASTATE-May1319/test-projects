@@ -4,3 +4,6 @@
 *.jar
 *.war
 *.ear
+
+CardGames/gen/
+CardGames/bin/
