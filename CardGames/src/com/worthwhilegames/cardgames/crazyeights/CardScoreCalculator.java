@@ -2,7 +2,8 @@ package com.worthwhilegames.cardgames.crazyeights;
 
 import java.util.List;
 
-import com.worthwhilegames.cardgames.NonNull;
+import annotations.NonNull;
+
 import com.worthwhilegames.cardgames.shared.Card;
 import com.worthwhilegames.cardgames.shared.Constants;
 

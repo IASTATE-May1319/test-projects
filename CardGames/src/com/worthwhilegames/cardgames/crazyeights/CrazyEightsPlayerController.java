@@ -26,9 +26,9 @@ import android.view.animation.ScaleAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import annotations.NonNull;
+import annotations.Nullable;
 
-import com.worthwhilegames.cardgames.NonNull;
-import com.worthwhilegames.cardgames.Nullable;
 import com.worthwhilegames.cardgames.R;
 import com.worthwhilegames.cardgames.player.activities.GameResultsActivity;
 import com.worthwhilegames.cardgames.player.activities.SelectSuitActivity;

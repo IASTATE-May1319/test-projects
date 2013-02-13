@@ -1,6 +1,7 @@
 package com.worthwhilegames.cardgames.crazyeights;
 
-import com.worthwhilegames.cardgames.Nullable;
+import annotations.Nullable;
+
 import com.worthwhilegames.cardgames.shared.Card;
 import com.worthwhilegames.cardgames.shared.Constants;
 import com.worthwhilegames.cardgames.shared.Rules;

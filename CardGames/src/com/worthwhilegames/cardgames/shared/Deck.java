@@ -2,8 +2,9 @@ package com.worthwhilegames.cardgames.shared;
 
 import java.util.ArrayList;
 
-import com.worthwhilegames.cardgames.NonNull;
-import com.worthwhilegames.cardgames.Nullable;
+import annotations.NonNull;
+import annotations.Nullable;
+
 import com.worthwhilegames.cardgames.R;
 import com.worthwhilegames.cardgames.crazyeights.CrazyEightsCardTranslator;
 

@@ -21,8 +21,8 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
+import annotations.NonNull;
 
-import com.worthwhilegames.cardgames.NonNull;
 import com.worthwhilegames.cardgames.R;
 import com.worthwhilegames.cardgames.gameboard.activities.ConnectActivity;
 import com.worthwhilegames.cardgames.gameboard.activities.GameResultsActivity;

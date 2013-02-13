@@ -8,8 +8,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
-import com.worthwhilegames.cardgames.NonNull;
-import com.worthwhilegames.cardgames.Nullable;
 import com.worthwhilegames.cardgames.shared.Card;
 import com.worthwhilegames.cardgames.shared.Constants;
 import com.worthwhilegames.cardgames.shared.Deck;
@@ -19,6 +17,8 @@ import com.worthwhilegames.cardgames.shared.Rules;
 import com.worthwhilegames.cardgames.shared.Util;
 
 import android.util.Log;
+import annotations.NonNull;
+import annotations.Nullable;
 
 /**
  * A class for keeping track of the logic and game state for the game type crazy eights
