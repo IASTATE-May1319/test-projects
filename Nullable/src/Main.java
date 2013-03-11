@@ -16,11 +16,12 @@ public class Main {
 	@English
 	static double speedMilesPerHour = 18536.023;
 	@English
-	@SuppressWarnings(value = { "TypeChecking" })
+	// @SuppressWarnings(value = { "TypeChecking" })
 	static double distanceToMarsInMiles = 342343;
 
 	public void a() {
-		@Nullable String str = "str";
+		@Nullable
+		String str = "str";
 		c(str);
 	}
 
@@ -35,6 +36,7 @@ public class Main {
 		testField2 = testField;
 	}
 
+	// @SuppressWarnings(value = { "doesn't matter" })
 	public double time(@Metric double distance, @Metric double speed) {
 		return distance / speed;
 	}
