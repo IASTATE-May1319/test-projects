@@ -1,3 +1,5 @@
+import annotations.A;
+import annotations.B;
 import annotations.English;
 import annotations.Metric;
 import annotations.NonNull;
@@ -19,13 +21,23 @@ public class Main {
 	// @SuppressWarnings(value = { "TypeChecking" })
 	static double distanceToMarsInMiles = 342343;
 
+	@A
+	static Object a = new Object();
+
+	@B
+	static Object b = new Object();
+
+	public static Object test(Object in) {
+		return in;
+	}
+
 	public void a() {
 		@Nullable
 		String str = "str";
 		c(str);
 	}
 
-	public String b() {
+	public static String b() {
 		String s = null;
 		return s;
 	}
@@ -59,5 +71,29 @@ public class Main {
 		time = m.time(distanceToMarsInMiles, speedMilesPerHour);
 		time = m.time(distanceToMarsInMeters, speedMetersPerSecond);
 		System.out.println(time);
+
+		Sandwich sandwich = makeSandwich();
+		sandwich.eat();
+		{
+			a = test(a);
+		}
+		{
+			b = test(b);
+		}
+	}
+
+	private static Sandwich makeSandwich() {
+		return null;
+	}
+
+	private static class Sandwich {
+
+		public Sandwich() {
+
+		}
+
+		public String eat() {
+			return "You ate a sandwich... Congratulations.";
+		}
 	}
 }
